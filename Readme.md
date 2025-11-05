@@ -1,32 +1,58 @@
 # 🧠 PsyCare – Psychological Care System
 
-A web-based psychological care system built using **Python**, **Flask**, and **Machine Learning** to assess mental health, predict the need for psychological consultation, and provide meditation and doctor recommendations.  
-Developed as a **final-year capstone project** to promote mental well-being through digital self-assessment and AI-powered prediction.
+## 📋 Overview
+**PsyCare** is a web-based psychological care and self-assessment platform designed to identify an individual's mental health status through an online quiz curated by professional psychologists.  
+Using **Python**, **Flask**, and **Machine Learning**, the system predicts whether a person requires psychological treatment and provides appropriate guidance, meditation suggestions, and doctor consultation options.
+
+Developed as a **Final Year Capstone Project (B.E. Computer Engineering, 2021)** by **Deepkumar Patel and team**, this project combines technology with psychology to promote mental wellness and early diagnosis.
 
 ---
 
-## ⚙️ Setup Instructions
+## 🚀 Features
+- 🧾 **Online Mental Health Quiz** – Evaluates user responses based on validated psychological questions.  
+- 🤖 **ML-based Prediction** – Predicts the need for treatment using **Random Forest Classifier** from *scikit-learn*.  
+- 👩‍⚕️ **Consultation Recommendation** – Suggests meditation or doctor consultation based on test results.  
+- 🔒 **User Privacy and Security** – Ensures confidentiality of user data with secure Flask backend.  
+- 📊 **Admin Panel (Future Work)** – Manage quiz data, view analytics, and monitor responses.  
 
-1. **Create a Virtual Environment**  
-   python -m venv venv  
-   source venv/Scripts/activate  # Windows  
-
-2. **Install Dependencies**  
-   pip install -r requirements.txt  
-
-3. **Run the Application**  
-   python app.py  
-
-Then open your browser and navigate to:  
-http://127.0.0.1:5000/
 
 ---
 
-## 💡 How It Works
+## 🛠️ Tech Stack
+| Category | Tools & Technologies |
+|-----------|----------------------|
+| Programming Language | Python, PHP | 
+| Framework | Flask, laravel | 
+| Frontend | HTML5, CSS3, Bootstrap |
+| Database | MySQL |
+| Machine Learning | scikit-learn, pandas, NumPy |
+| Tools | Spyder IDE, XAMPP, Heroku (for hosting), VS Code |
 
-1. Users complete an online quiz containing questions related to stress, anxiety, and sleep quality.  
-2. The model processes responses using the Random Forest Algorithm and predicts whether mental health care is needed.  
-3. Results display the mental health condition type and suggest next steps such as meditation or doctor consultation.
+---
+
+## ⚙️ System Requirements
+- **OS:** Windows 7 or above  
+- **RAM:** 8GB+ recommended  
+- **Tools:** Python 3.x, XAMPP, Spyder or VS Code  
+- **Libraries:** Flask, pandas, numpy, scikit-learn, matplotlib  
+
+---
+
+## 🧩 Installation & Setup
+1. **Clone the Repository**
+2. **Create a Virtual Environment**
+3. **Install Dependencies**
+4. **Run the Application**
+
+---
+
+## 🧠 How It Works
+
+Users complete an online quiz containing questions related to stress, anxiety, and sleep quality.
+
+The model processes responses using Random Forest Algorithm and predicts whether mental health care is needed.
+
+Results display the mental health condition type and suggest next steps (meditation or doctor consultation).
 
 ---
 
@@ -64,14 +90,6 @@ http://127.0.0.1:5000/
 
 This project was developed for academic and research purposes.  
 Feel free to fork, modify, or enhance it for educational use.
-
----
-
-## 🌐 References
-
-- Google Admin SDK Documentation  
-- OWASP Web Application Security Guidelines  
-- scikit-learn Random Forest Documentation  
 
 ---
 
