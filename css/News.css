@@ -1,0 +1,86 @@
+/* css file for news.html */
+
+/* class for first div class on line no 15 in News.html */
+.float-left
+{
+   display: flex;
+}
+h1{
+  margin: 50px;
+
+}
+/* class for image that are present on 17 line no  in News.html */
+.img1
+{
+	height:100px; 
+	width:100px;
+	letter-spacing:20px;
+	padding-right:10px;
+	margin:10px;
+}
+
+
+/* css for anchor tag */
+
+/* css for link of anchor tag */
+a:link
+{
+ text-decoration: none;
+}
+
+/* css for visited link of anchor tag  */
+a:visited 
+{
+  text-decoration: none;
+  color:black;
+}
+
+/* css for hover link of anchor tag  */
+a:hover
+{
+  text-decoration: none;
+  color:blue;
+}
+
+/* css for active link of anchor tag  */
+a:active
+{
+  text-decoration: none;
+}
+
+/* css for all div class news in a web page */
+div.news 
+{
+  background-color: white;
+  box-shadow: 0px 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  width: 400px;
+  float:left;
+  margin:5px; 
+ }
+ 
+/* css for all div class news when user click on that */
+div.news:hover
+{
+  transform:scale(1.1,1.1);
+  background-color: lightblue ;
+}
+
+/* css for all the news article images */
+div.news img
+{
+
+	
+  width: 100%;
+  height: 300px;
+}
+
+/* css for div class description that are present below every news image */
+div.desc 
+{
+  padding: 10px 20px;
+  text-align: center;
+}
+
+
+
+

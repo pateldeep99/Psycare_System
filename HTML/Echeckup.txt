@@ -1,0 +1,95 @@
+		<!-- this code is for bipolar checkup -->
+			<div class="Checkup">
+			<!-- anchor tag for hyperlink -->
+				<a href="https://health.economictimes.indiatimes.com/news/diagnostics/36-india-inc-employees-battling-mental-health-issues-since-beginning-of-pandemic-shows-survey/78399587">
+			<!-- image for better understanding -->
+					<img src="../IMAGES/Bipolar.jpg" alt="Image of Bipolar disorder Personality">
+				</a>
+			  <!-- div class for description-->
+			  	<div class="desc">
+					<a href="https://health.economictimes.indiatimes.com/news/diagnostics/36-india-inc-employees-battling-mental-health-issues-since-beginning-of-pandemic-shows-survey/78399587">
+				<!-- description for image -->
+					Bipolar Disorder Test
+					</a>
+				</div>  
+			</div>		
+
+			<!-- this code is for Anxiety checkup -->
+			<div class="Checkup">
+			<!-- anchor tag for hyperlink -->
+				<a href="https://health.economictimes.indiatimes.com/news/diagnostics/36-india-inc-employees-battling-mental-health-issues-since-beginning-of-pandemic-shows-survey/78399587">
+			<!-- image for better understanding -->
+					<img src="../IMAGES/Anxiety.png" alt="Image of Anxiety disorder Personality">
+				</a>
+			  <!-- div class for description-->
+			  	<div class="desc">
+					<a href="https://health.economictimes.indiatimes.com/news/diagnostics/36-india-inc-employees-battling-mental-health-issues-since-beginning-of-pandemic-shows-survey/78399587">
+				<!-- description for image -->
+					Anxiety Disorder Test
+					</a>
+				</div>  
+			</div>		
+
+			<!-- this code is for Personality checkup -->
+			<div class="Checkup">
+			<!-- anchor tag for hyperlink -->
+				<a href="https://health.economictimes.indiatimes.com/news/diagnostics/36-india-inc-employees-battling-mental-health-issues-since-beginning-of-pandemic-shows-survey/78399587">
+			<!-- image for better understanding -->
+					<img src="../IMAGES/Personality.jpg" alt="Image of Personality disorder Personality">
+				</a>
+			  <!-- div class for description-->
+			  	<div class="desc">
+					<a href="https://health.economictimes.indiatimes.com/news/diagnostics/36-india-inc-employees-battling-mental-health-issues-since-beginning-of-pandemic-shows-survey/78399587">
+				<!-- description for image -->
+					Personality Disorder Test
+					</a>
+				</div>  
+			</div>
+
+			<!-- this code is for Eating checkup -->
+			<div class="Checkup">
+			<!-- anchor tag for hyperlink -->
+				<a href="https://health.economictimes.indiatimes.com/news/diagnostics/36-india-inc-employees-battling-mental-health-issues-since-beginning-of-pandemic-shows-survey/78399587">
+			<!-- image for better understanding -->
+					<img src="../IMAGES/Eating disorder.jpg" alt="Image of Eating disorder Personality">
+				</a>
+			  <!-- div class for description-->
+			  	<div class="desc">
+					<a href="https://health.economictimes.indiatimes.com/news/diagnostics/36-india-inc-employees-battling-mental-health-issues-since-beginning-of-pandemic-shows-survey/78399587">
+				<!-- description for image -->
+					Eating Disorder Test
+					</a>
+				</div>  
+			</div>
+
+			<!-- this code is for Psychotic checkup -->
+			<div class="Checkup">
+			<!-- anchor tag for hyperlink -->
+				<a href="https://health.economictimes.indiatimes.com/news/diagnostics/36-india-inc-employees-battling-mental-health-issues-since-beginning-of-pandemic-shows-survey/78399587">
+			<!-- image for better understanding -->
+					<img src="../IMAGES/Psychotic.jpg" alt="Image of Psychotic disorder Personality">
+				</a>
+			  <!-- div class for description-->
+			  	<div class="desc">
+					<a href="https://health.economictimes.indiatimes.com/news/diagnostics/36-india-inc-employees-battling-mental-health-issues-since-beginning-of-pandemic-shows-survey/78399587">
+				<!-- description for image -->
+					Psychotic Disorder Test
+					</a>
+				</div>  
+			</div>
+
+			<!-- this code is for Post-traumatic checkup -->
+			<div class="Checkup">
+			<!-- anchor tag for hyperlink -->
+				<a href="https://health.economictimes.indiatimes.com/news/diagnostics/36-india-inc-employees-battling-mental-health-issues-since-beginning-of-pandemic-shows-survey/78399587">
+			<!-- image for better understanding -->
+					<img src="../IMAGES/Post truma.jpg" alt="Image of Post-traumatic disorder Personality">
+				</a>
+			  <!-- div class for description-->
+			  	<div class="desc">
+					<a href="https://health.economictimes.indiatimes.com/news/diagnostics/36-india-inc-employees-battling-mental-health-issues-since-beginning-of-pandemic-shows-survey/78399587">
+				<!-- description for image -->
+					Post-traumatic Disorder Test
+					</a>
+				</div>  
+			</div> 

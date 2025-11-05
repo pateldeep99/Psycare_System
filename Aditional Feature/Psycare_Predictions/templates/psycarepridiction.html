@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <title>Psycare Predictions</title>
+    <link id="favicon" type="image/x-icon" rel="shortcut icon" href="static/img/favicon.ico">
+    <link rel="stylesheet" href="static/css/bootstrap-4.5.2.min.css" />
+    <script type="text/javascript" src="static/js/jquery-2.1.0.min.js"></script>
+    <script type="text/javascript" src="static/js/socket.io.js"></script>
+    <script type="text/javascript" src="static/js/popper-1.16.0.min.js"></script>
+    <script type="text/javascript" src="static/js/bootstrap-4.5.2.min.js"></script>
+    <link rel="stylesheet" href="static/css/custom.css" />
+  </head>
+  <body>
+            <div class="card rounded-0">
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-sm-3">
+                    <h4 class="card-title">Predictive Profiling</h4>
+                  </div>
+                  <div class="col-sm-9">
+                    <p class="card-text"><svg style="width:60px;height:60px;fill:#000000" class="icon icon-patient-history"><use xlink:href="static/symbol-defs.svg#icon-patient-history"></use></svg> Please proceed to fill in details of an individual <u>to gauge the likelihood that he/she would choose to seek mental healthcare treatment</u>.</p>
+                  </div>
+                </div>
+                <form id="profile_and_predict" method="POST">
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <b>Q1. Assuming the individual has a mental health disorder, how often does he/she feel that it interferes with his/her work when not being treated effectively? (i.e. experience symptoms)</b><br>
+                      <div class="form-check-inline">
+                        <label class="form-check-label">
+                          <input type="radio" class="form-check-input" name="work_interfere_non_effective_treatment" checked value="0">Not applicable to him/her
+                        </label>
+                      </div>
+                      <div class="form-check-inline">
+                        <label class="form-check-label">
+                          <input type="radio" class="form-check-input" name="work_interfere_non_effective_treatment" value="1">Never
+                        </label>
+                      </div>
+                      <div class="form-check-inline">
+                        <label class="form-check-label">
+                          <input type="radio" class="form-check-input" name="work_interfere_non_effective_treatment" value="2">Rarely
+                        </label>
+                      </div>
+                      <div class="form-check-inline">
+                        <label class="form-check-label">
+                          <input type="radio" class="form-check-input" name="work_interfere_non_effective_treatment" value="3">Sometimes
+                        </label>
+                      </div>
+                      <div class="form-check-inline">
+                        <label class="form-check-label">
+                          <input type="radio" class="form-check-input" name="work_interfere_non_effective_treatment" value="4">Often
+                        </label>
+                      </div>
+                      <hr>
+                      <b>Q2. Has the individual ever been diagnosed with a mental health disorder?</b><br>
+                      <div class="form-check-inline">
+                        <label class="form-check-label">
+                          <input type="radio" class="form-check-input" name="diagnosed_disorder" checked value="1">Yes
+                        </label>
+                      </div>
+                      <div class="form-check-inline">
+                        <label class="form-check-label">
+                          <input type="radio" class="form-check-input" name="diagnosed_disorder" value="0">No
+                        </label>
+                      </div>
+                      <hr>
+                      <b>Q3. Assuming the individual has a mental health disorder, how often does he/she feel that it interferes with his/her work when being treated effectively?</b><br>
+                      <div class="form-check-inline">
+                        <label class="form-check-label">
+                          <input type="radio" class="form-check-input" name="work_interfere_effective_treatment" checked value="0">Not applicable to him/her
+                        </label>
+                      </div>
+                      <div class="form-check-inline">
+                        <label class="form-check-label">
+                          <input type="radio" class="form-check-input" name="work_interfere_effective_treatment" value="1">Never
+                        </label>
+                      </div>
+                      <div class="form-check-inline">
+                        <label class="form-check-label">
+                          <input type="radio" class="form-check-input" name="work_interfere_effective_treatment" value="2">Rarely
+                        </label>
+                      </div>
+                      <div class="form-check-inline">
+                        <label class="form-check-label">
+                          <input type="radio" class="form-check-input" name="work_interfere_effective_treatment" value="3">Sometimes
+                        </label>
+                      </div>
+                      <div class="form-check-inline">
+                        <label class="form-check-label">
+                          <input type="radio" class="form-check-input" name="work_interfere_effective_treatment" value="4">Often
+                        </label>
+                      </div>
+                      <hr>
+                      <b>Q4. Does the individual currently have a mental health disorder?</b><br>
+                      <div class="form-check-inline">
+                        <label class="form-check-label">
+                          <input type="radio" class="form-check-input" name="current_disorder" checked value="2">Yes
+                        </label>
+                      </div>
+                      <div class="form-check-inline">
+                        <label class="form-check-label">
+                          <input type="radio" class="form-check-input" name="current_disorder" value="0">Maybe
+                        </label>
+                      </div>
+                      <div class="form-check-inline">
+                        <label class="form-check-label">
+                          <input type="radio" class="form-check-input" name="current_disorder" value="1">No
+                        </label>
+                      </div>
+                    </div>
+                    <div class="col-sm-6">
+                      <b>Q5. Does the individual have a family history of mental illness?</b><br>
+                      <div class="form-check-inline">
+                        <label class="form-check-label">
+                          <input type="radio" class="form-check-input" name="family_history" checked value="2">Yes
+                        </label>
+                      </div>
+                      <div class="form-check-inline">
+                        <label class="form-check-label">
+                          <input type="radio" class="form-check-input" name="family_history" value="0">No
+                        </label>
+                      </div>
+                      <div class="form-check-inline">
+                        <label class="form-check-label">
+                          <input type="radio" class="form-check-input" name="family_history" value="1">Unsure
+                        </label>
+                      </div>
+                      <hr>
+                      <b>Q6. Did the individual have a mental health disorder in the past?</b><br>
+                      <div class="form-check-inline">
+                        <label class="form-check-label">
+                          <input type="radio" class="form-check-input" name="past_disorder" checked value="2">Yes
+                        </label>
+                      </div>
+                      <div class="form-check-inline">
+                        <label class="form-check-label">
+                          <input type="radio" class="form-check-input" name="past_disorder" value="0">Maybe
+                        </label>
+                      </div>
+                      <div class="form-check-inline">
+                        <label class="form-check-label">
+                          <input type="radio" class="form-check-input" name="past_disorder" value="1">No
+                        </label>
+                      </div>
+                      <hr>
+                      <b>Q7. Does the individual know of the options for mental health care available under his/her employer health coverage?</b><br>
+                      <div class="form-check-inline">
+                        <label class="form-check-label">
+                          <input type="radio" class="form-check-input" name="care_options" checked value="1">Yes
+                        </label>
+                      </div>
+                      <div class="form-check-inline">
+                        <label class="form-check-label">
+                          <input type="radio" class="form-check-input" name="care_options" value="0">No
+                        </label>
+                      </div>
+                      <hr>
+                      <b>Q8. How willing would the individual be to share with his/her friends & family that he/she has a mental illness?</b><br>
+                      <div class="form-check-inline"><label class="form-check-label"><input type="radio" class="form-check-input" name="friends_family" checked value="0">0</label></div>
+                      <div class="form-check-inline"><label class="form-check-label"><input type="radio" class="form-check-input" name="friends_family" value="1">1</label></div>
+                      <div class="form-check-inline"><label class="form-check-label"><input type="radio" class="form-check-input" name="friends_family" value="2">2</label></div>
+                      <div class="form-check-inline"><label class="form-check-label"><input type="radio" class="form-check-input" name="friends_family" value="3">3</label></div>
+                      <div class="form-check-inline"><label class="form-check-label"><input type="radio" class="form-check-input" name="friends_family" value="4">4</label></div>
+                      <div class="form-check-inline"><label class="form-check-label"><input type="radio" class="form-check-input" name="friends_family" value="5">5</label></div>
+                      <div class="form-check-inline"><label class="form-check-label"><input type="radio" class="form-check-input" name="friends_family" value="6">6</label></div>
+                      <div class="form-check-inline"><label class="form-check-label"><input type="radio" class="form-check-input" name="friends_family" value="7">7</label></div>
+                      <div class="form-check-inline"><label class="form-check-label"><input type="radio" class="form-check-input" name="friends_family" value="8">8</label></div>
+                      <div class="form-check-inline"><label class="form-check-label"><input type="radio" class="form-check-input" name="friends_family" value="9">9</label></div>
+                      <div class="form-check-inline"><label class="form-check-label"><input type="radio" class="form-check-input" name="friends_family" value="10">10</label></div>
+                      <br><br>
+                      <button type="submit" class="btn btn-sm btn-outline-dark rounded-0 float-left">Predict!</button>
+                    </div>
+                  </div>
+                </form>
+                <hr>
+                <div id="predictionOutcome"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>  
+    </div>
+ 
+    <script type="text/javascript" src="static/js/svgxuse.js" defer></script>
+    <script type="text/javascript" src="static/js/util.js"></script>
+    <script>
+      (function() {
+        $("#page-body").ready(function(ev) {
+          $("#page-body").append("<div id='pageModal' class='modal fade'><div class='modal-dialog modal-dialog-centered'><div class='modal-content'><div class='modal-header'><h4 class='modal-title'>Model training in progress</h4><button type='button' class='close' data-dismiss='modal'>&times;</button></div><div class='modal-body'>Please note that model training is currently in progress. Please do not navigate away from browser until process has been completed. This will usually take ~20 minutes.</div><div class='modal-footer'><button type='button' class='btn btn-sm btn-outline-success rounded-0' data-dismiss='modal'>OK</button></div></div></div></div>");
+        });
+
+        // ========================== SOCKET IO ========================================
+        // const socket = io("/train_model")
+
+        // socket.on("connect", () => {
+        //   $("#client_status").html("<small class='badge badge-success'>Connected</small>")
+        // });
+
+        // socket.on("disconnect", () => {
+        //   $("#client_status").html("<small class='badge badge-danger'>Disconnected</small>")
+        // });
+
+        // socket.on("data_command_response", (msg, cb) => {
+        //   $("#logs").append("<br>Backend Response: #" + msg.count + ":" + msg.data)
+        //   if (cb){
+        //     cb()
+        //   }
+        // });
+
+        // $("form#emit").submit(function(event) {
+        //     socket.emit("backend_event", { data: $("#emit_data").val()} )
+        //     return false
+        // });
+
+
+      })();
+          
+
+      $("form#profile_and_predict").submit(function(event) {
+          let allElements=event.currentTarget.elements;
+          let dataResult={
+            "work_interfere_non_effective_treatment":allElements.work_interfere_non_effective_treatment.value,
+            "diagnosed_disorder":allElements.diagnosed_disorder.value,
+            "work_interfere_effective_treatment":allElements.work_interfere_effective_treatment.value,
+            "current_disorder":allElements.current_disorder.value,
+            "family_history":allElements.family_history.value,
+            "past_disorder":allElements.past_disorder.value,
+            "care_options":allElements.care_options.value,
+            "friends_family":allElements.friends_family.value
+          };
+          let dataResultStr=JSON.stringify(dataResult);
+          $.ajax({
+            url: "/api/predict",
+            data: JSON.parse(dataResultStr),
+            method: "GET",
+            success: function(result) {
+                let predictedResult=result;
+                let htmlStr="";
+                if(predictedResult=="Yes") {
+                  htmlStr+="<div class='alert alert-success alert-dismissible rounded-0'><button type='button' class='close' data-dismiss='alert'>&times;</button><strong>Yes, </strong> you have required mental healthcare treatment.</div>";
+                } else if(predictedResult=="No") {
+                  htmlStr+="<div class='alert alert-info alert-dismissible rounded-0'><button type='button' class='close' data-dismiss='alert'>&times;</button><strong>No, </strong> you haven't required mental healthcare treatment.</div>";
+                }
+                $("#predictionOutcome").html(htmlStr);
+            },
+            error: function(err) {
+              console.log(err);
+            }
+          });
+          return false
+      });
+
+      $(document).ready(function(ev) {
+        var latest_training_timestamp = $.ajax({
+            url: "api/latest_timestamp/train_model",
+            dataType: "json",
+            type: "GET"
+        });
+
+        var latest_data_update_timestamp = $.ajax({
+            url: "api/latest_timestamp/data_updated",
+            dataType: "json",
+            type: "GET"
+        });
+
+        var latest_no_of_records = $.ajax({
+            url: "api/no_of_records/total",
+            dataType: "json",
+            type: "GET"
+        });
+       
+        var latest_training_logs = $.ajax({
+          url: "api/latest_logs",
+          dataType: "json",
+          type: "GET"
+        });
+
+        var latest_corr_scores = $.ajax({
+          url: "api/latest/corr_scores",
+          dataType: "json",
+          type: "GET"
+        });
+
+    
+        $.when(
+          latest_training_timestamp, 
+          latest_data_update_timestamp,
+          latest_no_of_records,
+          latest_training_logs,
+          latest_corr_scores
+        ).then(function(data1, data2, data3, data4,data5) {
+            //console.log("all succeeded")
+            data1=data1[0]
+            data2=data2[0]
+            data3=data3[0]
+            data4=data4[0]
+            data5=data5[0]
+
+            $("#model_last_trained").html(data1["model_last_trained"]);
+            $("#data_last_updated").html(data2["data_last_updated"]);
+
+            let htmlStr="";
+            htmlStr+="<tr><th>Year</th><th>No. of Records</th></tr>";
+            for(let r in data3) {
+              let record=data3[r];
+              let year=record["year"];
+              let no_of_records=record["no_of_records"];
+              htmlStr+="<tr><th>"+year+"</th><td>"+no_of_records+"</td></tr>";
+            }
+            $("#total_no_of_records").html(htmlStr);
+            
+            let responsejsonObj=JSON.parse(data4);
+            htmlStr=json2Table(responsejsonObj);
+            htmlStr="<h4 class='card-title'><small>Displaying Latest Training Logs</small></h4><div class='table-responsive'><table class='table table-sm table-striped table-bordered datatable'>"+htmlStr+"</table></div>";
+            $("#training_logs").html(htmlStr);
+
+            htmlStr=json2Table(data5);
+            $("#corr_scores").html(htmlStr);
+        }, function (jqXHR, textStatus, errorThrown) {
+            if (latest_training_timestamp.readyState != 4) {
+                latest_training_timestamp.abort();
+            }
+            if (latest_data_update_timestamp.readyState != 4) {
+                latest_data_update_timestamp.abort();
+            }
+            if (latest_no_of_records.readyState != 4) {
+                latest_no_of_records.abort();
+            }
+            if (latest_training_logs.readyState != 4) {
+                latest_training_logs.abort();
+            }
+            if (latest_corr_scores.readyState != 4) {
+                latest_corr_scores.abort();
+            }
+            //console.log("either or all failed")
+        });
+
+        $("#start_train_model").click(function(e) {
+          $("#start_train_model").disabled=true;
+          $("#start_train_model").html("<span class='spinner-border spinner-border-sm text-warning'>")
+          $("#training_status").html("&nbsp;<span class='spinner-grow text-muted'></span>&nbsp;<span class='spinner-grow text-muted'></span>&nbsp;<span class='spinner-grow text-muted'></span>&nbsp;");
+            
+            let modallnk = document.createElement("a");
+            modallnk.innerHTML = "Open modal";
+            modallnk.setAttribute("data-toggle","modal");
+            modallnk.setAttribute("data-target","#pageModal");
+            modallnk.style.display="none";
+            document.body.appendChild(modallnk);
+            modallnk.click();
+
+          $.ajax({
+            url: "api/train_model", 
+            method: "POST",
+            success: function(result) {
+              $("#training_status").html("");
+              result=JSON.parse(result);
+              let htmlStr=json2Table(result);
+              htmlStr="<h4 class='card-title'><small>Displaying Latest Training Logs</small></h4><div class='table-responsive'><table class='table table-sm table-striped table-bordered datatable'>"+htmlStr+"</table></div>";
+              $("#training_logs").html(htmlStr);
+              $("#start_train_model").html("<svg class='icon icon-terminal'><use xlink:href='static/symbol-defs.svg#icon-terminal'></use></svg>&nbsp;Train Model&nbsp;<small>via API</small>&nbsp;")
+              $("#start_train_model").disabled=false;
+            },
+            error: function(err) {
+              console.log(err);
+            }
+          });
+        });
+       
+
+        var totalNoOfRecords=1;
+        var selectedPage=1;
+        var noOfPagesPerView=30;
+        var recordsPerPage=17;
+        var pageRange=[];
+        var begin;
+        begin=selectedPage;
+        var noOfPages=1;
+
+        function getRange(){
+          begin=selectedPage;
+          let ps=[];
+          if (begin > (noOfPages-noOfPagesPerView) && (noOfPages-noOfPagesPerView)>0) {
+            begin=noOfPages-noOfPagesPerView+1;
+          }
+          for (var i=begin; i<begin+noOfPagesPerView; i++) {
+            ps.push(i);
+          }
+          pageRange=ps;
+        }
+        var viewSelected="latest_dataset";
+        function renderDatatable(selectedPage,view) {
+          $.ajax({
+            url: "api/"+view, 
+            method: "GET",
+            data: {
+              "selectedPage": selectedPage,
+              "recordsPerPage": recordsPerPage
+            },
+            success: function(final_response) {
+              totalNoOfRecords=final_response["total_no_of_records"]["total_no_of_records"];
+              $("#total_records_view").html(totalNoOfRecords);
+              noOfPages=( totalNoOfRecords-(totalNoOfRecords%recordsPerPage) )/recordsPerPage;
+              
+              if(Math.ceil(noOfPages/recordsPerPage)-1 == 0) {
+                let ps=[];
+                for(let n=1;n<=noOfPages;n++) {
+                  ps.push(n);
+                }
+                pageRange=ps;
+              } else {
+                getRange();
+              }
+              
+              let result=JSON.parse(final_response["data"]);
+              let htmlStr=json2Table(result);
+              $("#datatable").html(htmlStr);
+              renderPagination(pageRange);
+              $("#start_index").html("<kbd>"+((recordsPerPage*selectedPage)-recordsPerPage)+"</kbd>");
+              $("#end_index").html("<kbd>"+recordsPerPage*selectedPage+"</kbd>");
+            },
+            error: function(err) {
+              console.log(err);
+            }
+          });
+        }
+        function renderPagination(pageRange) {
+          let className="";
+
+          let paginationHtmlStr="";
+          paginationHtmlStr+="<ul class='pagination pagination-sm'>";
+          paginationHtmlStr+="<li class='page-item'><a class='page-link'>Prev</a></li>";
+
+          let start_n=pageRange[0];
+          let end_n=pageRange[pageRange.length-1];
+
+          for(let n=start_n;n<=end_n+1;n++) {
+            className="page-item";
+            if(n==selectedPage) {
+              className="page-item active";
+            }
+            paginationHtmlStr+="<li class='"+className+"'><a class='page-link'>"+n+"</a></li>";
+          }
+          paginationHtmlStr+="<li class='page-item'><a class='page-link'>Next</a></li>";
+          paginationHtmlStr+="</ul>";
+          $("#pagination").html(paginationHtmlStr);
+
+          $("#pagination .page-item").click(function(e) {
+            let selectedText=e.target.innerText;
+            if(selectedText == "Prev") {
+              if(selectedPage>1) {
+                selectedPage--;
+              }
+            } else if(selectedText == "Next") {
+              if(selectedPage<(noOfPages+1)) {
+                selectedPage++;
+              }
+            } else {
+              selectedPage=parseInt(selectedText);
+            }
+            renderDatatable(selectedPage,viewSelected);
+          });
+        }
+        $("#select_view").change(function(e) {
+          totalNoOfRecords=1;
+          selectedPage=1;
+          noOfPagesPerView=30;
+          recordsPerPage=17;
+          pageRange=[];
+          begin;
+          begin=selectedPage;
+          noOfPages=1;
+          viewSelected=e.target.value;
+          let displayView=e.target.selectedOptions[0].outerText;
+          $("#selectedView").html(displayView);
+          renderDatatable(selectedPage,viewSelected);
+        });
+
+        
+        renderDatatable(selectedPage,viewSelected);
+
+       
+        $(".nav-tabs a").click(function(){
+          $(this).tab("show");
+        });
+        
+
+
+      });
+
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,111 @@
+/* css file for Echeckup.html */
+
+/* css for main body */
+body
+{
+	margin:25px;
+}
+
+
+.card-body{
+      background-color: white;
+      box-shadow: 0px 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      margin:15px;
+      margin-left: 300px;
+      margin-right: 300px;
+      align-items: center;
+      content: justify;
+
+  }
+
+
+/* css for anchor tag */
+
+/* css for link of anchor tag */
+a:link
+{
+ text-decoration: none;
+ color:black;
+}
+
+/* css for visited link of anchor tag  */
+a:visited 
+{
+  text-decoration: none;
+  color:black;
+}
+
+/* css for hover link of anchor tag  */
+a:hover
+{
+  text-decoration: none;
+  color:green;
+}
+
+/* css for active link of anchor tag  */
+a:active
+{
+  text-decoration: none;
+}
+
+/* css for all div class news in a web page */
+div.Checkup
+{
+  /*background-color: white;*/
+  margin-top: 10px;
+  width: 250px;
+  float:left;
+  margin:15px; 
+}
+ 
+/* css for all the news article images */
+div.Checkup img
+{
+
+	
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+
+/* css for div class description that are present below every news image */
+div.desc 
+{
+  color:darkgrey;
+  margin-top:35px;
+  /*padding: 10px 20px;*/
+  padding-right: 20px;
+  display: flex;
+  text-align:justify;
+  font-size:15px;
+  /*text-align-last: justify;*/
+}
+
+.head{
+  color:lightblue;
+}
+
+.button{
+  float: right;
+  background:lightgrey;
+  border: none;
+  border-radius:15px;
+  color:black;
+  font-weight: bold;
+  font-family: system-ui;
+  font-size:15px;
+  padding: 14px 30px;
+  /*padding-right: 20px;*/
+  margin:5px;
+  text-align: center;
+  text-decoration: none;
+}
+
+
+.button:hover{
+outline: none;
+    background:  linear-gradient(to right, #00aaee, #77dd77);
+    border-radius: 15px;
+    border: none;
+    text-decoration: none;
+}
