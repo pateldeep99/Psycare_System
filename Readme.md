@@ -2,7 +2,7 @@
 
 ## 📋 Overview
 **PsyCare** is a web-based psychological care and self-assessment platform designed to identify an individual's mental health status through an online quiz curated by professional psychologists.  
-Using **Python**, **Flask**, and **Machine Learning**, the system predicts whether a person requires psychological treatment and provides appropriate guidance, meditation suggestions, and doctor consultation options.
+Using **PHP**, **Laravel**, **Python**, **Flask**, and **Machine Learning**, the system predicts whether a person requires psychological treatment and provides appropriate guidance, meditation suggestions, and doctor consultation options.
 
 Developed as a **Final Year Capstone Project (B.E. Computer Engineering, 2021)** by **Deepkumar Patel and team**, this project combines technology with psychology to promote mental wellness and early diagnosis.
 
