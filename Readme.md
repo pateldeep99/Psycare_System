@@ -22,7 +22,7 @@ Developed as a **Final Year Capstone Project (B.E. Computer Engineering, 2021)**
 | Category | Tools & Technologies |
 |-----------|----------------------|
 | Programming Language | Python, PHP | 
-| Framework | Flask, laravel | 
+| Framework | Flask, Laravel | 
 | Frontend | HTML5, CSS3, Bootstrap |
 | Database | MySQL |
 | Machine Learning | scikit-learn, pandas, NumPy |
@@ -33,8 +33,8 @@ Developed as a **Final Year Capstone Project (B.E. Computer Engineering, 2021)**
 ## ⚙️ System Requirements
 - **OS:** Windows 7 or above  
 - **RAM:** 8GB+ recommended  
-- **Tools:** Python 3.x, XAMPP, Spyder or VS Code  
-- **Libraries:** Flask, pandas, numpy, scikit-learn, matplotlib  
+- **Tools:** Python 3.x, XAMPP, PHP ,Spyder or VS Code  
+- **Libraries:** Flask, Laravel, pandas, numpy, scikit-learn, matplotlib  
 
 ---
 
